@@ -17,12 +17,12 @@ public class 插入排序 implements Sort{
         int index = 0;
         for (int i = 1; i < data.length; i++) {
             index = i;
-            now = data[i];
+            now = data[i];//存储当前值
             while (index>0&&data[index-1]>now) {
-                data[index]=data[index-1];
+                data[index]=data[index-1];//将当前值的位置用其前一个元素替代
                 index--;
             }
-            data[index] = now;
+            data[index] = now;//将最终的位置赋值上当前值
         }
     }
 

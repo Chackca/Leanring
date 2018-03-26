@@ -22,26 +22,22 @@ public class 桶排序  implements Sort{
 	
 	
 	public static void bucketSort(int[] arr){
-	    
+
+		//新建一个大小为原数组长度的数组
+		ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(arr.length);
+
 	    int max = Integer.MIN_VALUE;
 	    int min = Integer.MAX_VALUE;
+
 	    for(int i = 0; i < arr.length; i++){
 	        max = Math.max(max, arr[i]);
 	        min = Math.min(min, arr[i]);
+			bucketArr.add(new ArrayList());
 	    }
-	    
+
 	    //每个桶的区间大小
 	    int bucketNum = (max - min) / arr.length+1;
-	    /*if (bucketNum==0) {
-	    	bucketNum = 1;
-		}*/
-	    //新建一个大小为原数组长度的数组
-	    ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(arr.length);
-	    
-	    for(int i = 0; i < arr.length; i++){
-	        bucketArr.add(new ArrayList<Integer>());
-	    }
-	    
+
 	    //将每个元素放入桶
 	    for(int i = 0; i < arr.length; i++){
 	        int num = (arr[i] - min) / bucketNum ;

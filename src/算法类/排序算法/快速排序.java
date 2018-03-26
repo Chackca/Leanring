@@ -45,6 +45,8 @@ public class 快速排序  implements Sort{
 		//System.out.println(start);
 		return start;
 	}
+
+
 	//自己写的
 	private static int partition3(int[] data, int start, int end) {
 		if(start>=end)

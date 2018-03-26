@@ -17,6 +17,7 @@ public class 基数排序  implements Sort{
 
 
 	//自己写的
+    //若有要求不能修改原数组则按下面的方式，否则output数组可以不需要
 	private static void countSort2(int[] a, int exp) {
 		int[] output = new int[a.length];    // 存储"被排序数据"的临时数组
 		LinkedList[] buckets = new LinkedList[10];
@@ -75,6 +76,7 @@ public class 基数排序  implements Sort{
      *    (03) 当exp=100表示按照"百位"对数组a进行排序
      *    ...
      */
+    //若有要求不能修改原数组则按下面的方式，否则output数组可以不需要
     private static void countSort(int[] a, int exp) {
         //int output[a.length];    // 存储"被排序数据"的临时数组
         int[] output = new int[a.length];    // 存储"被排序数据"的临时数组

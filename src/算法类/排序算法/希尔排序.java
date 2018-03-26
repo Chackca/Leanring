@@ -17,13 +17,13 @@ public class 希尔排序 implements Sort{
     public static void shellSort(int[] data){
         if(data==null || data.length<=1)
             return;
-
         //数组长12 d=6  d=3
         for(int gap=data.length/2; gap>0; gap=gap/2){
             //i=6 7   /  3 4 5
             for(int i=gap;i<data.length;i++){
                 int cur = i;
                 int temp = data[i];
+                //这个步骤类似于直接插入排序
                 while (cur-gap>=0 && data[cur-gap]>temp) {
                     data[cur] = data[cur-gap];
                     cur = cur-gap;

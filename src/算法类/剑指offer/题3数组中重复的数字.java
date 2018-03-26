@@ -102,7 +102,7 @@ public class 题3数组中重复的数字 {
 	/*
 	 * 方法五：类似于二路归并，这个思路应该说是二路计数，不修改原始数据，时间复杂度o(nlogn),空间复杂度o(1)
 	 * 相当于以时间换空间，nlogn没有前面的n那么快
-	 * 此时为题目5，不修改数组找出重复的字
+	 * 此时为题目2，不修改数组找出重复的字
 	 */
 	private static int getDuplication5(int[] data) {
 		if (data==null ||data.length<2) 

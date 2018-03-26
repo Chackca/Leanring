@@ -6,27 +6,19 @@ package 大话设计模式.designpattern.bridge;
  *
  */
 public abstract class Implementor {
-
     public abstract void operation();
-
 }
 
 class ConcreteImplemtorA extends Implementor {
-
     @Override
     public void operation() {
-	System.out.println("ConcreteImplemtorA的方法执行");
-
+	    System.out.println("ConcreteImplemtorA的方法执行");
     }
-
 }
 
 class ConcreteImplemtorB extends Implementor {
-
     @Override
     public void operation() {
-	System.out.println("ConcreteImplemtorB的方法执行");
-
+	    System.out.println("ConcreteImplemtorB的方法执行");
     }
-
 }

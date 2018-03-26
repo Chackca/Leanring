@@ -64,8 +64,8 @@ public class 题181删除链表的节点 {
 		//要删除的节点不是尾结点也不是头结点	
 		else {
 			//node = nodeToBeDelete;
-			node = nodeToBeDelete.next;
-			node.val =nodeToBeDelete.next.val;
+			nodeToBeDelete = nodeToBeDelete.next;
+			nodeToBeDelete.val =nodeToBeDelete.next.val;
 			return head;
 		}
 		

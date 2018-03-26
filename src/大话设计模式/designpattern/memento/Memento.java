@@ -6,6 +6,7 @@ package 大话设计模式.designpattern.memento;
  * @author liu yuning
  *
  */
+
 public class Memento {
     private String state;
 

@@ -13,7 +13,7 @@ public class 选择排序 implements Sort{
     public static void selectionSort(int[] data){
         if(data == null) return;
         int curMinIndex = 0;
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < data.length-1; i++) {
             curMinIndex=i;
             for (int j = i; j < data.length; j++) {
                 if (data[curMinIndex]>data[j]) {
@@ -26,8 +26,19 @@ public class 选择排序 implements Sort{
         }
     }
 
+    public static void main(String[] args) {
+        int[] data = {5,4,3,1,2,6,10,7};
+        selectionSort(data);
+        System.out.print("数组选择排序：\t");
+        for(int item: data){
+            System.out.print(item);
+            System.out.print('\t');
+        }
+        System.out.println();
+    }
+
     @Test
-    private void testSelectionSort(){
+    public void testSelectionSort(){
         int[] data = {5,4,3,1,2,6,10,7};
         selectionSort(data);
         System.out.print("数组选择排序：\t");

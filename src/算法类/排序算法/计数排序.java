@@ -37,7 +37,6 @@ public class 计数排序 implements Sort {
 				}
 			}
 		}
-		
 	}
 	//计数排序测试
 	@Test

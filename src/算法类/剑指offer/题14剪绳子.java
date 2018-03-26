@@ -22,6 +22,7 @@ public class 题14剪绳子 {
 		products[1]=1;
 		products[2]=2;
 		products[3]=3;
+		//product[n]=product[i]*product[n-i];i<=n/2
 		int max = 0 ;
 		for (int i = 4; i <= length; i++) {
 			max = 0;
@@ -49,7 +50,7 @@ public class 题14剪绳子 {
 		int result = 0;
 		//比如原数是5，变成2*3
 		if (length-timesOf3*3 == 2) {
-			result = (int) Math.pow(3, timesOf3-1) * 2*3;
+			result = (int) Math.pow(3, timesOf3) * 2;
 		}
 		//比如原数是6，无需剩余
 		if (length-timesOf3*3 == 0) {
@@ -66,12 +67,11 @@ public class 题14剪绳子 {
 	
 	
 	public static void main(String[] args){
-        for(int i=2;i<10;i++){
+        for(int i=2;i<15;i++){
             System.out.println("动态规划：长度为"+i+"的最大值->"+maxCutting(i));
+			System.out.println("贪婪算法：长度为"+i+"的最大值->"+maxCutting2(i));
         }
-        for(int i=10;i<20;i++){
-            System.out.println("贪婪算法：长度为"+i+"的最大值->"+maxCutting2(i));
-        }
+
     }
 
 	

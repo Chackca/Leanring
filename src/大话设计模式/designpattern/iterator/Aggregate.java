@@ -7,7 +7,8 @@ package 大话设计模式.designpattern.iterator;
  *
  * @param <T>
  */
-public interface Aggregate<T> {
 
+//聚集接口
+public interface Aggregate<T> {
     public Iterator<T> createIterator();
 }

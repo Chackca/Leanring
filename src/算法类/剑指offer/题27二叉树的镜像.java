@@ -33,6 +33,5 @@ public class 题27二叉树的镜像 {
         System.out.println(root);
         mirrorRecursively(root);
         System.out.println(root);
-
 	}
 }

@@ -99,11 +99,11 @@ public class 题32从上到下打印二叉树 {
         root.left.right = new TreeNode<Integer>(5);
         root.right.left = new TreeNode<Integer>(6);
         root.right.right = new TreeNode<Integer>(7);
-        printTreeInQueue(root);
+        printTreeInQueue(root);//不分行从上到下打印二叉树
         System.out.println();
-        printTreeInLine(root);
+        printTreeInLine(root);//分行从上到下打印二叉树
         System.out.println();
-        printTreeInZhi(root);
+        printTreeInZhi(root);//按照之字形打印二叉树
         System.out.println();
         //测试打印前序遍历SB.append(",");
         System.out.println(root.toFrontString());
@@ -111,8 +111,6 @@ public class 题32从上到下打印二叉树 {
         System.out.println(root.toMidString());
         //测试打印后序遍历
         System.out.println(root.toBackString());
-        
-        System.out.println(root.toFrontString());
     }
 
 	

@@ -20,9 +20,9 @@ public class 题2实现Singleton模式 {
 		private Singleton1(){}
 		public static Singleton1 getInstance() {
 			return instance;
-		}		
+		}
 	}
-	
+
 	//版本二：懒汉式(非线程安全)
 	//特点：在第一次调用获取实例方法时分配内存，实现了懒加载；非线程安全；
 	static class Singleton2{	
@@ -60,9 +60,9 @@ public class 题2实现Singleton模式 {
 			if (instance == null ) {
 				synchronized (Singleton4.class){
 					if (instance == null )
-					instance = new Singleton4();
+					instance = new Singleton4();//这一步非原子性操作，多线程下可能会出错
 				}
-			}	
+			}
 			return instance;
 		}
 	}
@@ -99,18 +99,18 @@ public class 题2实现Singleton模式 {
 	
 	//版本六：双检锁DCL，支持多线程-懒汉式,volatile，并且加入优化
 	//因为volatile操作的是主内存的数据，主内存速度比工作内存的慢，所以可以设置一个局部实例在工作内存，以此减少与主内存的交互次数
-	static class Singleton6{	
+	static class Singleton6{
 		private static volatile Singleton6 instance = null;//这里的instance在主内存
 		private Singleton6(){}
 		public static Singleton6 getInstance() {
 			Singleton6 result = instance;//读取一次主内存，后序没有读取主内存的操作了
 			if (result == null ) {
 				synchronized (Singleton6.class){
-					if (result == null )
+					if ( result == null )
 					instance = result = new Singleton6();
 				}
 			}	
-			return instance;//写会主内存
+			return instance;//写回主内存
 		}
 	}
 	
@@ -142,7 +142,7 @@ public class 题2实现Singleton模式 {
 	
 	//版本八：通过枚举实现
 	//一个完美的单例需要做到：单例，懒加载，线程安全，防止反序列化产生新对象，防止反射攻击
-	//而枚举的特性保证了以上除了懒加载以外的所有要求，而且实现代码及其简单
+	//而枚举的特性保证了以上除了懒加载以外的所有要求，而且实现代码极其简单
 	//Enum的单例模式参考：http://www.jianshu.com/p/83f7958b0944
 	/*
 	 * 枚举类型特点：
@@ -153,6 +153,7 @@ public class 题2实现Singleton模式 {
 	 */
 	enum Singleton8{
 	    instance;
+	    //以下代码只是给一个属性验证此枚举确实为单例模式
 	    private String attribute;
 	    void setAttribute(String attribute){
 	        this.attribute = attribute;
@@ -178,4 +179,5 @@ public class 题2实现Singleton模式 {
         singleton81.setAttribute("aaa");
         System.out.println(singleton82.getAttribute());
     }
+
 }

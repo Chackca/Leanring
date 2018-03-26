@@ -1,4 +1,4 @@
-package 算法类.剑指offer;
+package 算法类.其他题目;
 
 public class 扩展1判断是否为质数 {
 

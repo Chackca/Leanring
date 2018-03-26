@@ -37,27 +37,27 @@ public class TreeNode<T> {
     //返回前序遍历
     public String toFrontString() {
     	StringBuilder SB = new StringBuilder("前序遍历：[");
-    	//preOrder(this,SB);//递归实现
-    	preorderIteratively(this,SB);//迭代实现
-    	//SB.deleteCharAt(SB.lastIndexOf(","));
+    	preOrder(this,SB);//递归实现
+    	//preorderIteratively(this,SB);//迭代实现
+    	SB.deleteCharAt(SB.lastIndexOf(","));
     	SB.append("]");
 		return SB.toString();
     }
     //返回中序遍历
   	public String toMidString() {
   		StringBuilder SB = new StringBuilder("中序遍历：[");
-      	//midOrder(this,SB);//递归实现
-      	inorderIteratively(this,SB);//迭代实现
-      	//SB.deleteCharAt(SB.lastIndexOf(","));
+      	midOrder(this,SB);//递归实现
+      	//inorderIteratively(this,SB);//迭代实现
+      	SB.deleteCharAt(SB.lastIndexOf(","));
       	SB.append("]");
   		return SB.toString();
   	}
   	//返回后序遍历
   	public String toBackString() {
   		StringBuilder SB = new StringBuilder("后序遍历：[");
-      	//posOrder(this,SB);//递归实现
-      	postorderIteratively(this,SB);//迭代实现
-      	//SB.deleteCharAt(SB.lastIndexOf(","));
+      	posOrder(this,SB);//递归实现
+      	//postorderIteratively(this,SB);//迭代实现
+      	SB.deleteCharAt(SB.lastIndexOf(","));
       	SB.append("]");
   		return SB.toString();
   	}
@@ -69,13 +69,14 @@ public class TreeNode<T> {
     public void preOrder(TreeNode<T> node,StringBuilder SB){
     	if (node != null)
         {
-    		//前序这里执行处理
+            //执行处理代表当前为中
+    		//前序这里执行处理（中左右）
             SB.append(node.val);
             SB.append(",");
             preOrder(node.left,SB);
-            //中序在这里
+            //中序在这里（左中右）
             preOrder(node.right,SB);
-            //后序在这里
+            //后序在这里（左右中）
         }
     }
     

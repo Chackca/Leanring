@@ -1,6 +1,6 @@
 package 算法类.剑指offer;
 
-public class 题29顺时针打印矩阵未完成 {
+public class 题29顺时针打印矩阵 {
 	
 	public static void PrintMatrixClockwisely(int[][] numbers) {
 		if (numbers == null) {
