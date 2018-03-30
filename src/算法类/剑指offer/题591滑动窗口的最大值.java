@@ -2,6 +2,7 @@ package 算法类.剑指offer;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class 题591滑动窗口的最大值 {
 	//把可能会成为最大值的下标存储下来，从而降低扫描次数
@@ -43,4 +44,5 @@ public class 题591滑动窗口的最大值 {
             System.out.print("\t");
 	    }
 	}
+
 }

@@ -10,11 +10,11 @@ import java.util.List;
  */
 //用来声明执行操作的接口
 public abstract class Command {
+    //命令类，服务员手里的订单，订单里面包含了客户想要什么厨师做的菜
     protected Reciever reciever;
     public Command(Reciever reciever) {
 	    this.reciever = reciever;
     }
-
     public abstract void execute();
 }
 

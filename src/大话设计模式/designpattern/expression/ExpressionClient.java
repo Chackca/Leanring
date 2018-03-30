@@ -7,6 +7,7 @@ import java.util.List;
 public class ExpressionClient {
     public static void main(String[] args) {
         Context context = new Context();
+        context.setInput("this is English");
         List<AbstractExpression> list = new ArrayList<AbstractExpression>();
         list.add(new TerminalExpression());
         list.add(new NonTerminalExpression());
