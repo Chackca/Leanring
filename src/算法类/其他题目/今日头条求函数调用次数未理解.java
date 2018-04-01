@@ -2,7 +2,7 @@ package 算法类.其他题目;
 
 import java.util.Scanner;
 
-public class 今日头条求函数调用次数 {
+public class 今日头条求函数调用次数未理解 {
     /*public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();

@@ -18,6 +18,7 @@ import java.util.Set;
     （3），v[i][j]=max{v[i-1][j],v[i-1][j-w[i]]+v[i]}  当j>=w[i]
     好的，我们的算法就是基于此三个结论式。
  **/
+//求背包能够装的最大价值
 public class 背包问题 {
 
     //01、二维数组法
@@ -61,7 +62,7 @@ public class 背包问题 {
         int length = weight.length;
         int w = 12;
         //dp[i][j]：代表前i个物品装入体积为j的背包的最大价值
-        int[] dp = new int[w+1];//+1的目的使得i位置代表体制为i时
+        int[] dp = new int[w+1];//+1的目的使得i位置代表体积为i时
 
         //循环遍历
         for (int i = 0; i < length; i++) {

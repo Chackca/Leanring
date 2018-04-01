@@ -23,7 +23,7 @@ import java.util.Scanner;
  样例2：
  123456789
  */
-public class 扩展4数字字符 {
+public class 扩展4数字字符再做 {
 
     public static void main(String[] args) {
         Scanner sin = new Scanner(System.in);

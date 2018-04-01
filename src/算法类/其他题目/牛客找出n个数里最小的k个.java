@@ -1,6 +1,7 @@
 package 算法类.其他题目;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 题目描述
@@ -20,16 +21,25 @@ import java.util.ArrayList;
  */
 public class 牛客找出n个数里最小的k个 {
 
-    private static ArrayList findSmallest(String str) {
+    private static void findSmallest(String str) {
+        String[] strings = str.split(" ");
+        int[] arr = new int[strings.length-1];
+        int k = Integer.parseInt(strings[strings.length-1]);
 
+        for (int i = 0 ; i < strings.length-1 ; i++) {
+            arr[i] = Integer.parseInt(strings[i]);
+        }
+        Arrays.sort(arr);
 
-        return null;
+        for (int i = 0; i<k ;i++){
+            System.out.print(arr[i]+" ");
+        }
     }
 
 
     public static void main(String[] args) {
         String str = new String("3 9 6 8 -10 7 -11 19 30 12 23 5");
-        System.out.println(findSmallest(str));
+        findSmallest(str);
     }
 
 
