@@ -51,7 +51,8 @@ public class 题181删除链表的节点 {
 		if (head == nodeToBeDelete) {
 			if (head.next!=null) {
 				return head.next;
-			}else return null;
+			}else
+				return null;
 		}
 		//要删除的节点是尾结点
 		else if (nodeToBeDelete.next==null) {

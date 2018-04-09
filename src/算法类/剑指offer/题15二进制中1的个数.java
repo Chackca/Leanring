@@ -23,7 +23,7 @@ public class 题15二进制中1的个数 {
         }  
         return count;  
     }  
-	
+	//将数字无符号右移，直到为0。
 	public static int numberOfOne1(int n){
         int count=0;
         while(n!=0){
@@ -33,7 +33,7 @@ public class 题15二进制中1的个数 {
         }
         return count;
     }
-	
+	//使用一个标记，初始为1，让标记值与原输入数字异或，然后标记值左移。
     public static int numberOfOne2(int n){
         int count=0;
         int flag=1;

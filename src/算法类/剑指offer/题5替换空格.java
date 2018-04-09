@@ -53,9 +53,6 @@ public class 题5替换空格 {
 	public static void main(String[] args){
 		String data= new String("We are happy");
 		
-		
-		
-		
         System.out.println("原始字符串："+data);       
         System.out.println("Java方法更改后："+replaceBlank(data));
         System.out.print("C语言方法更改后：");

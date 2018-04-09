@@ -17,14 +17,15 @@ public class 题11旋转数组的最小数字 {
 		int middle = 0;
 		while (data[start]>=data[end]) {
 			if (end-start ==1) {
-				middle = end;break;}
+				middle = end;break;
+			}
 			
 			middle = (end + start)/2;
 			
 			/*
 			 * 如果三个指向的数相同
 			 */
-			if (data[start]==data[middle]&&data[end]==data[middle]) {
+			if (data[start]==data[middle] && data[end]==data[middle]) {
 				return MinInOrder(data,start,end);
 			}
 			

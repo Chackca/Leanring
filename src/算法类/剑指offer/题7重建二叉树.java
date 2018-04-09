@@ -12,7 +12,7 @@ package 算法类.剑指offer;
 	
  */
 public class 题7重建二叉树 {
-	
+
 	public static TreeNode construct(int[] preorder,int[] inorder){
         if(preorder==null || inorder==null || preorder.length==0 || preorder.length!=inorder.length)
             return null;
@@ -47,10 +47,10 @@ public class 题7重建二叉树 {
         //        / \
         //       4   5
         //pre->12453  in->42513   post->45231
-        //int[] pre={1,2,4,5,3};
-        //int[] in={4,2,5,1,3};
-        int[] pre={1,2,4,7,3,5,6,8};
-        int[] in={4,7,2,1,5,3,8,6};
+        int[] pre={1,2,4,5,3};
+        int[] in={4,2,5,1,3};
+        //int[] pre={1,2,4,7,3,5,6,8};
+        //int[] in={4,7,2,1,5,3,8,6};
         TreeNode<Integer> root = construct(pre,in);
         //对重建后的树,进行前中后序遍历，验证是否重建正确
         

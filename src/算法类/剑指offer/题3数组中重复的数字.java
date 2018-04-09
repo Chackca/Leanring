@@ -32,7 +32,7 @@ public class 题3数组中重复的数字 {
 				if (data[j]==cur) return data[j];
 			}
 		}
-		return 0;
+		return cur;
 	}
 
 	

@@ -14,31 +14,40 @@ public class 题182删除链表中重复的节点 {
 	
 	private static ListNode<Integer> deleteDuplication(ListNode<Integer> head) {
 		if (head == null) return head;
-		ListNode<Integer> curNode = head;
-		ListNode<Integer> preNode = null;
-		ListNode<Integer> posNode = head.next;
-		while(posNode!=null){
-			if (posNode.val != curNode.val) {
-				preNode = curNode;
-				curNode = posNode;
-				posNode = posNode.next;
-				//head.next = curNode;
-			}//若当前节点等于下一个节点
-			else {
-				//若下一个节点还等于下一个节点的下一个
-				while (posNode.next.val ==posNode.val ) {
-					posNode = posNode.next;
-				}
-				if (posNode.next!=null) {
-					curNode=posNode.next;
-					posNode = posNode.next.next;
-					//head.next = curNode;
-				}//重复的节点到达了尾节点
-				else {
-					preNode.next =null;
-				}
-			}	
-		}	
+        ListNode<Integer> pre = null;
+        ListNode<Integer> cur = head;
+        ListNode<Integer> post = head.next;
+        boolean needDelete ;
+        while (post!=null){
+            needDelete = false;
+            //如果下一个节点的值与当前节点一样
+            if (cur.val.equals(post.val)){
+                needDelete = true;
+                while (post.next!=null && post.next.val == cur.val){
+                    post = post.next;
+                }
+            }else {//说明当前遍历中没有重复
+                pre = cur ;
+                cur = post;
+                post = post.next;
+            }
+            if (needDelete && post.next !=null ){ //当前有重复并且重复没有到达链表最后
+                if(cur == head){
+                    head = post.next;
+                }
+                cur = post.next;
+                pre = null;
+                post = post.next.next;
+                cur.next = post;
+            }else if (needDelete){ //否则说明pre的后面都是重复的同一个数了
+                if (pre == null){
+                    return null;
+                }
+                pre.next = null;
+                post = post.next;
+            }
+        }
+
 		return head;
 	}
 	
@@ -57,13 +66,13 @@ public class 题182删除链表中重复的节点 {
         
         
         ListNode<Integer> head2 = new ListNode<>(1);
-        head2.next= new ListNode<>(2);
-        head2.next.next = new ListNode<>(3);
+        head2.next= new ListNode<>(1);
+        head2.next.next = new ListNode<>(2);
         head2.next.next.next = new ListNode<>(3);
-        head2.next.next.next.next = new ListNode<>(3);
-        head2.next.next.next.next.next = new ListNode<>(4);
+        head2.next.next.next.next = new ListNode<>(4);
+        head2.next.next.next.next.next = new ListNode<>(1);
         System.out.println(head2);
-        head2 = deleteDuplication2(head2);
+        head2 = deleteDuplication(head2);
         System.out.println(head2);
     }
 	

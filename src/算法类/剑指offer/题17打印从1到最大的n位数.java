@@ -29,7 +29,7 @@ public class 题17打印从1到最大的n位数 {
 			SB.append(0);
 		}
 		
-		while (!Increment(SB)) {
+		while (!Increment(SB)) { //判断没有进位
 			//在SB中默认分配了n个长度的空间，如果直接sysout会打印出前面为0的字符
 			//所以需要定一个函数自己控制下
 			printNumber(SB);
@@ -63,7 +63,7 @@ public class 题17打印从1到最大的n位数 {
 	}
 	
 	private static void printNumber(StringBuilder SB) {
-		boolean flag = false;
+		//boolean flag = false;
 		for (int i = 0; i < SB.length(); i++) {
 			if(SB.charAt(i)=='0') 
 				continue;

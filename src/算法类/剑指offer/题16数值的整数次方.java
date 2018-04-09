@@ -53,11 +53,10 @@ public class 题16数值的整数次方 {
 		}if (exponent ==0) {
 			return 1;
 		}
-		
 		double result = powerWithUnsignedExponentRecursion(base,exponent>>1);
 		result *= result;
-		if ((exponent & 1) ==1) {
-			result *=base;
+		if ((exponent & 1) == 1) {  //指数为奇数
+			result *= base;
 		}
 		return result;
 	}
